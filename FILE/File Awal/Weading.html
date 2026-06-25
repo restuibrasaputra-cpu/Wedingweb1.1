@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raka & Dewi — Pernikahan Adat Jawa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#FAF4E8',
+            'bg-deep': '#F0E6D0',
+            'bg-dark': '#E5D8BE',
+            brown: '#3E2C1E',
+            'brown-mid': '#5C4333',
+            'brown-soft': '#7A6250',
+            'brown-light': '#A89078',
+            'brown-faint': '#D0C2AD',
+            gold: '#B8862D',
+            'gold-light': '#D4A843',
+            'gold-soft': '#E8C96E',
+            'gold-pale': '#F0DFA0',
+            maroon: '#6B1D2A',
+            'maroon-soft': '#8B3040',
+            green: '#4A6741',
+            'green-soft': '#6B8F60',
+          },
+          fontFamily: {
+            display: ['Playfair Display','Georgia','serif'],
+            sans: ['Lato','sans-serif'],
+          },
+          animation: {
+            'fade-up': 'fadeUp .9s ease-out forwards',
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'float': 'floatY 7s ease-in-out infinite',
+            'sway': 'sway 8s ease-in-out infinite',
+            'drift': 'drift 12s ease-in-out infinite',
+            'petal1': 'petal1 15s ease-in-out infinite',
+            'petal2': 'petal2 18s ease-in-out infinite',
+            'petal3': 'petal3 20s ease-in-out infinite',
+            'spin-slow': 'spin 80s linear infinite',
+            'glow': 'glow 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeUp: { '0%':{opacity:0,transform:'translateY(25px)'},'100%':{opacity:1,transform:'translateY(0)'} },
+            fadeIn: { '0%':{opacity:0},'100%':{opacity:1} },
+            floatY: { '0%,100%':{transform:'translateY(0) rotate(0deg)'},'50%':{transform:'translateY(-12px) rotate(3deg)'} },
+            sway: { '0%,100%':{transform:'rotate(-4deg)'},'50%':{transform:'rotate(4deg)'} },
+            drift: { '0%,100%':{transform:'translate(0,0)'},'25%':{transform:'translate(15px,-10px)'},'50%':{transform:'translate(-5px,-20px)'},'75%':{transform:'translate(-15px,-5px)'} },
+            petal1: { '0%':{transform:'translate(0,-20px) rotate(0deg);opacity:0},'10%':{opacity:.7},'90%':{opacity:.7},'100%':{transform:'translate(80px,100vh) rotate(720deg);opacity:0} },
+            petal2: { '0%':{transform:'translate(0,-30px) rotate(0deg);opacity:0},'10%':{opacity:.5},'90%':{opacity:.5},'100%':{transform:'translate(-60px,100vh) rotate(-540deg);opacity:0} },
+            petal3: { '0%':{transform:'translate(0,-15px) rotate(0deg);opacity:0},'15%':{opacity:.6},'85%':{opacity:.6},'100%':{transform:'translate(40px,100vh) rotate(480deg);opacity:0} },
+            glow: { '0%,100%':{opacity:.4},'50%':{opacity:.8} },
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    ::selection{background:rgba(184,134,45,.25);color:#3E2C1E}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:#FAF4E8}
+    ::-webkit-scrollbar-thumb{background:#B8862D40;border-radius:10px}
+    body{background:#FAF4E8;color:#3E2C1E;font-family:'Lato',sans-serif;overflow-x:hidden}
+
+    .reveal{opacity:0;transform:translateY(25px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+    .reveal.active{opacity:1;transform:translateY(0)}
+    .rd1{transition-delay:.12s}.rd2{transition-delay:.24s}.rd3{transition-delay:.36s}.rd4{transition-delay:.48s}
+
+    /* ===== DENSE BATIK PATTERNS ===== */
+    .batik-kawung-dense{
+      background-image:url("data:image/svg+xml,%3Csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='25' cy='25' rx='20' ry='20' fill='none' stroke='%23B8862D' stroke-width='.7' opacity='.1'/%3E%3Cellipse cx='25' cy='25' rx='13' ry='13' fill='none' stroke='%23B8862D' stroke-width='.5' opacity='.08'/%3E%3Ccircle cx='25' cy='25' r='5' fill='none' stroke='%23B8862D' stroke-width='.3' opacity='.06'/%3E%3Ccircle cx='25' cy='25' r='1.5' fill='%23B8862D' opacity='.08'/%3E%3Cline x1='25' y1='5' x2='25' y2='45' stroke='%23B8862D' stroke-width='.2' opacity='.04'/%3E%3Cline x1='5' y1='25' x2='45' y2='25' stroke='%23B8862D' stroke-width='.2' opacity='.04'/%3E%3C/svg%3E");
+      background-size:50px 50px;
+    }
+    .batik-parang-dense{
+      background-image:url("data:image/svg+xml,%3Csvg width='32' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 64L16 32L32 64' fill='none' stroke='%23B8862D' stroke-width='.6' opacity='.1'/%3E%3Cpath d='M0 48L16 16L32 48' fill='none' stroke='%23B8862D' stroke-width='.4' opacity='.07'/%3E%3Cpath d='M0 32L16 0L32 32' fill='none' stroke='%23B8862D' stroke-width='.6' opacity='.1'/%3E%3Cpath d='M8 32L16 16L24 32' fill='none' stroke='%23B8862D' stroke-width='.3' opacity='.05'/%3E%3C/svg%3E");
+      background-size:32px 64px;
+    }
+    .batik-truntum-dense{
+      background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 2L24 12L20 22L16 12Z' fill='none' stroke='%23B8862D' stroke-width='.5' opacity='.09'/%3E%3Cpath d='M20 18L24 28L20 38L16 28Z' fill='none' stroke='%23B8862D' stroke-width='.5' opacity='.09' transform='rotate(45 20 28)'/%3E%3Ccircle cx='20' cy='20' r='2' fill='%23B8862D' opacity='.04'/%3E%3Cpath d='M20 2L24 12L20 22L16 12Z' fill='none' stroke='%23B8862D' stroke-width='.3' opacity='.05' transform='translate(20,0) rotate(90 20 12)'/%3E%3C/svg%3E");
+      background-size:40px 40px;
+    }
+    .batik-sidomukti{
+      background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5Q40 15 30 25Q20 15 30 5Z' fill='none' stroke='%23B8862D' stroke-width='.5' opacity='.08'/%3E%3Cpath d='M30 35Q40 45 30 55Q20 45 30 35Z' fill='none' stroke='%23B8862D' stroke-width='.5' opacity='.08'/%3E%3Cpath d='M5 30Q15 20 25 30Q15 40 5 30Z' fill='none' stroke='%23B8862D' stroke-width='.5' opacity='.08'/%3E%3Cpath d='M35 30Q45 20 55 30Q45 40 35 30Z' fill='none' stroke='%23B8862D' stroke-width='.5' opacity='.08'/%3E%3Ccircle cx='30' cy='30' r='3' fill='%23B8862D' opacity='.05'/%3E%3C/svg%3E");
+      background-size:60px 60px;
+    }
+
+    /* ===== ORNAMENTAL BORDERS ===== */
+    .ornate-border-top{
+      background-image:url("data:image/svg+xml,%3Csvg width='200' height='30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15Q25 0 50 15Q75 30 100 15Q125 0 150 15Q175 30 200 15' fill='none' stroke='%23B8862D' stroke-width='1' opacity='.3'/%3E%3Cpath d='M0 20Q25 8 50 20Q75 32 100 20Q125 8 150 20Q175 32 200 20' fill='none' stroke='%23B8862D' stroke-width='.5' opacity='.15'/%3E%3Ccircle cx='50' cy='15' r='2' fill='%23B8862D' opacity='.15'/%3E%3Ccircle cx='100' cy='15' r='2' fill='%23B8862D' opacity='.15'/%3E%3Ccircle cx='150' cy='15' r='2' fill='%23B8862D' opacity='.15'/%3E%3C/svg%3E");
+      background-size:200px 30px;background-repeat:repeat-x;height:30px;
+    }
+    .ornate-border-bottom{
+      background-image:url("data:image/svg+xml,%3Csvg width='200' height='30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15Q25 30 50 15Q75 0 100 15Q125 30 150 15Q175 0 200 15' fill='none' stroke='%23B8862D' stroke-width='1' opacity='.3'/%3E%3Cpath d='M0 10Q25 22 50 10Q75 -2 100 10Q125 22 150 10Q175 -2 200 10' fill='none' stroke='%23B8862D' stroke-width='.5' opacity='.15'/%3E%3Ccircle cx='50' cy='15' r='2' fill='%23B8862D' opacity='.15'/%3E%3Ccircle cx='100' cy='15' r='2' fill='%23B8862D' opacity='.15'/%3E%3Ccircle cx='150' cy='15' r='2' fill='%23B8862D' opacity='.15'/%3E%3C/svg%3E");
+      background-size:200px 30px;background-repeat:repeat-x;height:30px;
+    }
+
+    /* Corner ornaments */
+    .corner-ornament{position:relative}
+    .corner-ornament::before,.corner-ornament::after{
+      content:'';position:absolute;width:80px;height:80px;pointer-events:none;opacity:.12;
+    }
+    .corner-ornament::before{
+      top:-4px;left:-4px;
+      border-top:2px solid #B8862D;border-left:2px solid #B8862D;
+      border-top-left-radius:16px;
+    }
+    .corner-ornament::after{
+      bottom:-4px;right:-4px;
+      border-bottom:2px solid #B8862D;border-right:2px solid #B8862D;
+      border-bottom-right-radius:16px;
+    }
+
+    .hero-overlay{
+      background:linear-gradient(180deg,rgba(62,44,30,.35) 0%,rgba(62,44,30,.15) 30%,rgba(250,244,232,.5) 70%,rgba(250,244,232,1) 100%);
+    }
+
+    .soft-shadow{box-shadow:0 4px 30px rgba(62,44,30,.07)}
+    .soft-shadow-lg{box-shadow:0 8px 50px rgba(62,44,30,.1)}
+    .gold-glow{box-shadow:0 0 30px rgba(184,134,45,.15)}
+
+    .card-hover{transition:all .4s ease}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 16px 50px rgba(62,44,30,.12)}
+
+    .gallery-item{overflow:hidden;border-radius:16px}
+    .gallery-item img{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+    .gallery-item:hover img{transform:scale(1.06)}
+
+    .nav-scrolled{background:rgba(250,244,232,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 20px rgba(62,44,30,.06)}
+
+    .btn-batik{background:#3E2C1E;color:#FAF4E8;position:relative;overflow:hidden;transition:all .3s ease}
+    .btn-batik:hover{background:#5C4333;transform:translateY(-1px);box-shadow:0 6px 24px rgba(62,44,30,.25)}
+    .btn-batik::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='12' cy='12' rx='10' ry='10' fill='none' stroke='%23B8862D' stroke-width='.3' opacity='.15'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23B8862D' opacity='.08'/%3E%3C/svg%3E");background-size:24px 24px;pointer-events:none}
+
+    .toast{animation:toastIn .4s ease-out,toastOut .4s ease-in 2.6s forwards}
+    @keyframes toastIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+    @keyframes toastOut{to{opacity:0;transform:translateY(-10px)}}
+
+    input,textarea,select{font-family:'Lato',sans-serif}
+
+    /* Floating petals */
+    .petal{position:fixed;pointer-events:none;z-index:1;opacity:0}
+  </style>
+</head>
+<body>
+
+  <!-- ===== FLOATING PETALS ===== -->
+  <div class="petal animate-petal1" style="left:10%;animation-delay:0s">
+    <svg width="16" height="16" viewBox="0 0 16 16"><ellipse cx="8" cy="8" rx="6" ry="4" fill="#E8C96E" opacity=".5" transform="rotate(30 8 8)"/></svg>
+  </div>
+  <div class="petal animate-petal2" style="left:30%;animation-delay:3s">
+    <svg width="12" height="12" viewBox="0 0 12 12"><ellipse cx="6" cy="6" rx="5" ry="3" fill="#D4A843" opacity=".4" transform="rotate(-20 6 6)"/></svg>
+  </div>
+  <div class="petal animate-petal3" style="left:55%;animation-delay:6s">
+    <svg width="14" height="14" viewBox="0 0 14 14"><ellipse cx="7" cy="7" rx="5" ry="3.5" fill="#E8C96E" opacity=".45" transform="rotate(60 7 7)"/></svg>
+  </div>
+  <div class="petal animate-petal1" style="left:75%;animation-delay:9s">
+    <svg width="10" height="10" viewBox="0 0 10 10"><ellipse cx="5" cy="5" rx="4" ry="2.5" fill="#F0DFA0" opacity=".5" transform="rotate(-40 5 5)"/></svg>
+  </div>
+  <div class="petal animate-petal2" style="left:90%;animation-delay:2s">
+    <svg width="13" height="13" viewBox="0 0 13 13"><ellipse cx="6.5" cy="6.5" rx="5" ry="3" fill="#D4A843" opacity=".35" transform="rotate(15 6.5 6.5)"/></svg>
+  </div>
+  <div class="petal animate-petal3" style="left:45%;animation-delay:12s">
+    <svg width="11" height="11" viewBox="0 0 11 11"><ellipse cx="5.5" cy="5.5" rx="4.5" ry="2.8" fill="#E8C96E" opacity=".4" transform="rotate(-55 5.5 5.5)"/></svg>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-gold">
+          <ellipse cx="12" cy="12" rx="10" ry="10" stroke="currentColor" stroke-width=".8"/>
+          <ellipse cx="12" cy="12" rx="6" ry="6" stroke="currentColor" stroke-width=".5"/>
+          <circle cx="12" cy="12" r="2" fill="currentColor" opacity=".4"/>
+        </svg>
+        <span class="font-display text-lg text-brown tracking-wide">R <span class="text-gold">&</span> D</span>
+      </a>
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#mempelai" class="text-[13px] text-brown-soft hover:text-gold transition-colors">Mempelai</a>
+        <a href="#cerita" class="text-[13px] text-brown-soft hover:text-gold transition-colors">Cerita</a>
+        <a href="#acara" class="text-[13px] text-brown-soft hover:text-gold transition-colors">Acara</a>
+        <a href="#galeri" class="text-[13px] text-brown-soft hover:text-gold transition-colors">Galeri</a>
+        <a href="#rsvp" class="text-[13px] btn-batik px-5 py-2 rounded-full">RSVP</a>
+      </div>
+      <button id="menuBtn" class="md:hidden text-brown-soft"><span class="iconify" data-icon="lucide:menu" data-width="22"></span></button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden bg-bg/95 backdrop-blur-xl border-t border-gold/10">
+      <div class="px-6 py-5 flex flex-col gap-3">
+        <a href="#mempelai" class="text-sm text-brown-soft py-2.5 border-b border-gold/10 mob-link">Mempelai</a>
+        <a href="#cerita" class="text-sm text-brown-soft py-2.5 border-b border-gold/10 mob-link">Cerita</a>
+        <a href="#acara" class="text-sm text-brown-soft py-2.5 border-b border-gold/10 mob-link">Acara</a>
+        <a href="#galeri" class="text-sm text-brown-soft py-2.5 border-b border-gold/10 mob-link">Galeri</a>
+        <a href="#rsvp" class="text-sm text-brown-soft py-2.5 mob-link">RSVP</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="relative min-h-screen flex items-end pb-20 md:pb-28 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://picsum.photos/seed/tropical-garden-luxury-warm/1920/1080.jpg" alt="" class="w-full h-full object-cover">
+      <div class="hero-overlay absolute inset-0"></div>
+    </div>
+    <div class="absolute inset-0 batik-kawung-dense opacity-80 pointer-events-none"></div>
+
+    <!-- Decorative Sulur (Vines) Left -->
+    <svg class="absolute top-20 left-0 w-20 md:w-32 h-64 md:h-96 opacity-20 animate-sway pointer-events-none" viewBox="0 0 120 360" fill="none">
+      <path d="M0 360 C20 300, 60 280, 40 220 C20 160, 80 140, 60 80 C40 20, 80 0, 100 0" stroke="#B8862D" stroke-width="1.5" fill="none"/>
+      <path d="M40 220 C55 210, 70 215, 65 200" stroke="#B8862D" stroke-width="1" fill="none"/>
+      <path d="M60 80 C75 70, 85 78, 80 65" stroke="#B8862D" stroke-width="1" fill="none"/>
+      <ellipse cx="65" cy="195" rx="8" ry="5" fill="#B8862D" opacity=".3" transform="rotate(-20 65 195)"/>
+      <ellipse cx="80" cy="60" rx="7" ry="4" fill="#B8862D" opacity=".25" transform="rotate(15 80 60)"/>
+      <ellipse cx="100" cy="5" rx="6" ry="4" fill="#B8862D" opacity=".2" transform="rotate(-10 100 5)"/>
+      <circle cx="65" cy="195" r="2" fill="#D4A843" opacity=".4"/>
+      <circle cx="80" cy="60" r="1.5" fill="#D4A843" opacity=".35"/>
+    </svg>
+
+    <!-- Decorative Sulur Right -->
+    <svg class="absolute top-32 right-0 w-16 md:w-28 h-56 md:h-80 opacity-15 animate-sway pointer-events-none" style="animation-delay:-3s;transform-origin:top right" viewBox="0 0 100 280" fill="none">
+      <path d="M100 0 C80 60, 40 80, 60 140 C80 200, 30 220, 50 280" stroke="#B8862D" stroke-width="1.5" fill="none"/>
+      <path d="M60 140 C45 130, 35 138, 40 150" stroke="#B8862D" stroke-width="1" fill="none"/>
+      <ellipse cx="40" cy="148" rx="7" ry="4" fill="#B8862D" opacity=".25" transform="rotate(25 40 148)"/>
+      <circle cx="40" cy="148" r="1.5" fill="#D4A843" opacity=".35"/>
+    </svg>
+
+    <!-- Mega Mendung Wave -->
+    <div class="absolute bottom-0 left-0 right-0 pointer-events-none">
+      <svg viewBox="0 0 1440 180" class="w-full" preserveAspectRatio="none" style="height:130px">
+        <path d="M0 100C180 30,360 140,540 90C720 40,900 130,1080 80C1200 50,1350 110,1440 70L1440 180H0Z" fill="#FAF4E8" opacity=".4"/>
+        <path d="M0 130C240 70,480 160,720 110C960 60,1200 150,1440 100L1440 180H0Z" fill="#FAF4E8" opacity=".7"/>
+        <path d="M0 155C300 120,600 175,900 145C1100 125,1300 165,1440 140L1440 180H0Z" fill="#FAF4E8"/>
+      </svg>
+    </div>
+
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl">
+        <!-- Small flower cluster -->
+        <div class="flex items-center gap-2 mb-4 animate-fade-in" style="opacity:0;animation-delay:.2s">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="4" r="3" fill="#B8862D" opacity=".3"/><circle cx="4" cy="10" r="3" fill="#B8862D" opacity=".25"/><circle cx="12" cy="10" r="3" fill="#B8862D" opacity=".25"/><circle cx="8" cy="8" r="2" fill="#D4A843" opacity=".4"/></svg>
+          <p class="text-[10px] md:text-xs tracking-[0.4em] uppercase text-gold">Dengan Rahmat Allah SWT</p>
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="4" r="3" fill="#B8862D" opacity=".3"/><circle cx="4" cy="10" r="3" fill="#B8862D" opacity=".25"/><circle cx="12" cy="10" r="3" fill="#B8862D" opacity=".25"/><circle cx="8" cy="8" r="2" fill="#D4A843" opacity=".4"/></svg>
+        </div>
+
+        <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-brown leading-[.95] animate-fade-up" style="opacity:0;animation-delay:.5s">Raka</h1>
+
+        <div class="flex items-center gap-5 my-4 animate-fade-in" style="opacity:0;animation-delay:.8s">
+          <div class="h-px flex-1 bg-gradient-to-r from-transparent to-gold/40"></div>
+          <!-- Ornamental Ampersand -->
+          <div class="relative">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" class="text-gold/70 animate-glow">
+              <ellipse cx="20" cy="20" rx="18" ry="18" stroke="currentColor" stroke-width=".8"/>
+              <ellipse cx="20" cy="20" rx="12" ry="12" stroke="currentColor" stroke-width=".5"/>
+              <circle cx="20" cy="20" r="4" fill="currentColor" opacity=".3"/>
+            </svg>
+            <span class="absolute inset-0 flex items-center justify-center font-display italic text-gold text-sm">&</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-l from-transparent to-gold/40"></div>
+        </div>
+
+        <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-brown leading-[.95] animate-fade-up" style="opacity:0;animation-delay:1s">Dewi</h1>
+
+        <div class="flex items-center justify-center gap-3 mt-6 animate-fade-in" style="opacity:0;animation-delay:1.4s">
+          <svg width="12" height="12" viewBox="0 0 12 12"><ellipse cx="6" cy="6" rx="5" ry="5" stroke="#B8862D" stroke-width=".5" opacity=".4"/></svg>
+          <p class="text-sm tracking-[0.25em] text-brown-mid font-light">21 · Juni · 2026</p>
+          <svg width="12" height="12" viewBox="0 0 12 12"><ellipse cx="6" cy="6" rx="5" ry="5" stroke="#B8862D" stroke-width=".5" opacity=".4"/></svg>
+        </div>
+
+        <div class="mt-12 animate-fade-in" style="opacity:0;animation-delay:1.8s">
+          <a href="#opening" class="inline-flex flex-col items-center gap-1 text-brown-light hover:text-gold transition-colors">
+            <span class="text-[10px] tracking-[0.3em] uppercase">Buka Undangan</span>
+            <span class="iconify animate-bounce" data-icon="lucide:chevrons-down" data-width="18"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OPENING ===== -->
+  <section id="opening" class="py-16 md:py-20 relative">
+    <div class="ornate-border-top w-full"></div>
+    <div class="max-w-xl mx-auto px-6 text-center pt-8 reveal">
+      <div class="relative inline-block mb-6">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" class="text-gold/30 animate-float"><ellipse cx="18" cy="18" rx="16" ry="16" stroke="currentColor" stroke-width=".6"/><ellipse cx="18" cy="18" rx="10" ry="10" stroke="currentColor" stroke-width=".4"/><circle cx="18" cy="18" r="3" fill="currentColor" opacity=".3"/></svg>
+        <span class="absolute inset-0 flex items-center justify-center text-gold/50 text-xs">✦</span>
+      </div>
+      <p class="font-display text-base md:text-lg text-brown-mid leading-relaxed italic">
+        Bismillahirrahmanirrahim<br><br>
+        Assalamu'alaikum Warahmatullahi Wabarakatuh<br><br>
+        Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami.
+      </p>
+    </div>
+    <div class="ornate-border-bottom w-full mt-6"></div>
+  </section>
+
+  <!-- ===== COUNTDOWN ===== -->
+  <section class="py-14 md:py-18 relative overflow-hidden">
+    <div class="absolute inset-0 batik-truntum-dense pointer-events-none opacity-60"></div>
+    <!-- Side vine decorations -->
+    <svg class="absolute left-0 top-0 w-10 h-full opacity-10 pointer-events-none" viewBox="0 0 40 200" fill="none"><path d="M20 0 C35 50, 5 100, 20 150 C35 200, 5 250, 20 300" stroke="#B8862D" stroke-width="1" fill="none"/><circle cx="10" cy="50" r="3" fill="#B8862D" opacity=".3"/><circle cx="30" cy="120" r="3" fill="#B8862D" opacity=".3"/><circle cx="10" cy="190" r="3" fill="#B8862D" opacity=".3"/></svg>
+    <svg class="absolute right-0 top-0 w-10 h-full opacity-10 pointer-events-none" viewBox="0 0 40 200" fill="none"><path d="M20 0 C5 50, 35 100, 20 150 C5 200, 35 250, 20 300" stroke="#B8862D" stroke-width="1" fill="none"/><circle cx="30" cy="70" r="3" fill="#B8862D" opacity=".3"/><circle cx="10" cy="140" r="3" fill="#B8862D" opacity=".3"/></svg>
+
+    <div class="relative max-w-3xl mx-auto px-6">
+      <div class="flex items-center justify-center gap-3 md:gap-6">
+        <div class="text-center flex-1 bg-bg/60 backdrop-blur-sm rounded-2xl py-5 md:py-7 border border-gold/10 soft-shadow">
+          <span id="days" class="block font-display text-3xl md:text-5xl font-light text-brown">00</span>
+          <span class="text-[10px] tracking-[0.2em] uppercase text-brown-light mt-1 block">Hari</span>
+        </div>
+        <span class="font-display text-xl text-gold/30 -mt-3 hidden sm:block">·</span>
+        <div class="text-center flex-1 bg-bg/60 backdrop-blur-sm rounded-2xl py-5 md:py-7 border border-gold/10 soft-shadow">
+          <span id="hours" class="block font-display text-3xl md:text-5xl font-light text-brown">00</span>
+          <span class="text-[10px] tracking-[0.2em] uppercase text-brown-light mt-1 block">Jam</span>
+        </div>
+        <span class="font-display text-xl text-gold/30 -mt-3 hidden sm:block">·</span>
+        <div class="text-center flex-1 bg-bg/60 backdrop-blur-sm rounded-2xl py-5 md:py-7 border border-gold/10 soft-shadow">
+          <span id="minutes" class="block font-display text-3xl md:text-5xl font-light text-brown">00</span>
+          <span class="text-[10px] tracking-[0.2em] uppercase text-brown-light mt-1 block">Menit</span>
+        </div>
+        <span class="font-display text-xl text-gold/30 -mt-3 hidden sm:block">·</span>
+        <div class="text-center flex-1 bg-bg/60 backdrop-blur-sm rounded-2xl py-5 md:py-7 border border-gold/10 soft-shadow hidden sm:block">
+          <span id="seconds" class="block font-display text-3xl md:text-5xl font-light text-brown">00</span>
+          <span class="text-[10px] tracking-[0.2em] uppercase text-brown-light mt-1 block">Detik</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MEMPELAI ===== -->
+  <section id="mempelai" class="py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-48 h-full batik-parang-dense opacity-50 pointer-events-none"></div>
+
+    <!-- Floating flower cluster -->
+    <div class="absolute top-16 right-8 opacity-20 animate-float pointer-events-none hidden md:block" style="animation-delay:-2s">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+        <circle cx="40" cy="20" r="10" fill="none" stroke="#B8862D" stroke-width=".8"/>
+        <circle cx="20" cy="40" r="10" fill="none" stroke="#B8862D" stroke-width=".8"/>
+        <circle cx="60" cy="40" r="10" fill="none" stroke="#B8862D" stroke-width=".8"/>
+        <circle cx="40" cy="60" r="10" fill="none" stroke="#B8862D" stroke-width=".8"/>
+        <circle cx="40" cy="40" r="6" fill="#B8862D" opacity=".15"/>
+        <circle cx="40" cy="40" r="2" fill="#D4A843" opacity=".3"/>
+      </svg>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-6">
+      <!-- Section Header with Medalion -->
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block relative">
+          <!-- Outer ring -->
+          <svg class="absolute -top-8 left-1/2 -translate-x-1/2 w-[100px] h-[100px] opacity-20 animate-spin-slow pointer-events-none" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="48" stroke="#B8862D" stroke-width=".5" stroke-dasharray="4 6"/>
+            <circle cx="50" cy="2" r="3" fill="#B8862D" opacity=".3"/>
+            <circle cx="98" cy="50" r="3" fill="#B8862D" opacity=".3"/>
+            <circle cx="50" cy="98" r="3" fill="#B8862D" opacity=".3"/>
+            <circle cx="2" cy="50" r="3" fill="#B8862D" opacity=".3"/>
+          </svg>
+          <!-- Main medallion -->
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" class="mx-auto text-gold/50 mb-3">
+            <ellipse cx="28" cy="28" rx="26" ry="26" stroke="currentColor" stroke-width="1"/>
+            <ellipse cx="28" cy="28" rx="20" ry="20" stroke="currentColor" stroke-width=".6"/>
+            <ellipse cx="28" cy="28" rx="14" ry="14" stroke="currentColor" stroke-width=".4"/>
+            <circle cx="28" cy="28" r="5" fill="currentColor" opacity=".3"/>
+            <circle cx="28" cy="28" r="2" fill="currentColor" opacity=".5"/>
+          </svg>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl font-light text-brown">Mempelai</h2>
+        <div class="flex items-center justify-center gap-2 mt-3">
+          <div class="h-px w-16 bg-gradient-to-r from-transparent to-gold/30"></div>
+          <svg width="8" height="8"><circle cx="4" cy="4" r="2" fill="#B8862D" opacity=".3"/></svg>
+          <div class="h-px w-16 bg-gradient-to-l from-transparent to-gold/30"></div>
+        </div>
+      </div>
+
+      <!-- Groom -->
+      <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center mb-20">
+        <div class="reveal rd1 text-center md:text-left order-2 md:order-1">
+          <div class="inline-block bg-gold/10 rounded-full px-3 py-1 mb-3">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-gold font-medium">Mempelai Pria</p>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl font-light text-brown">Raka Putra Mahardika</h3>
+          <div class="flex items-center gap-2 my-4">
+            <div class="h-px flex-1 max-w-[60px] bg-gold/30 mx-auto md:mx-0"></div>
+            <svg width="16" height="16" viewBox="0 0 16 16"><ellipse cx="8" cy="8" rx="7" ry="7" stroke="#B8862D" stroke-width=".5" opacity=".3"/><circle cx="8" cy="8" r="1.5" fill="#B8862D" opacity=".3"/></svg>
+            <div class="h-px flex-1 max-w-[60px] bg-gold/30 mx-auto md:mx-0"></div>
+          </div>
+          <p class="text-sm text-brown-mid leading-relaxed max-w-sm mx-auto md:mx-0">
+            Putra pertama dari<br>
+            <span class="text-brown font-medium">Bapak Surya Mahardika</span> &<br>
+            <span class="text-brown font-medium">Ibu Endang Sulistyowati</span>
+          </p>
+          <a href="#" class="inline-flex items-center gap-1.5 mt-5 text-xs text-brown-light hover:text-gold transition-colors">
+            <span class="iconify" data-icon="lucide:instagram" data-width="13"></span>
+            <span>@raka.mahardika</span>
+          </a>
+        </div>
+        <div class="reveal rd2 order-1 md:order-2 flex justify-center">
+          <div class="relative">
+            <div class="absolute -inset-4 rounded-2xl batik-kawung-dense opacity-70 pointer-events-none"></div>
+            <div class="absolute -inset-2 rounded-2xl border-2 border-gold/20 pointer-events-none"></div>
+            <!-- Corner decorations -->
+            <svg class="absolute -top-3 -left-3 w-6 h-6 text-gold/40" viewBox="0 0 24 24" fill="none"><path d="M0 0 L24 0 L24 4 L4 4 L4 24 L0 24 Z" fill="currentColor"/></svg>
+            <svg class="absolute -top-3 -right-3 w-6 h-6 text-gold/40" viewBox="0 0 24 24" fill="none"><path d="M24 0 L0 0 L0 4 L20 4 L20 24 L24 24 Z" fill="currentColor"/></svg>
+            <svg class="absolute -bottom-3 -left-3 w-6 h-6 text-gold/40" viewBox="0 0 24 24" fill="none"><path d="M0 24 L24 24 L24 20 L4 20 L4 0 L0 0 Z" fill="currentColor"/></svg>
+            <svg class="absolute -bottom-3 -right-3 w-6 h-6 text-gold/40" viewBox="0 0 24 24" fill="none"><path d="M24 24 L0 24 L0 20 L20 20 L20 0 L24 0 Z" fill="currentColor"/></svg>
+            <div class="relative w-56 md:w-72 aspect-[3/4] rounded-2xl overflow-hidden soft-shadow-lg">
+              <img src="https://picsum.photos/seed/indonesian-man-batik-portrait/500/660.jpg" alt="Raka" class="w-full h-full object-cover">
+              <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-brown/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Divider - Elaborate -->
+      <div class="flex items-center justify-center gap-4 reveal mb-20">
+        <div class="h-px flex-1 max-w-[80px] bg-gradient-to-r from-transparent to-gold/30"></div>
+        <div class="flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 14 14"><ellipse cx="7" cy="7" rx="6" ry="6" stroke="#B8862D" stroke-width=".5" opacity=".25"/><circle cx="7" cy="7" r="1.5" fill="#B8862D" opacity=".25"/></svg>
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" class="text-gold/50"><ellipse cx="14" cy="14" rx="12" ry="12" stroke="currentColor" stroke-width=".8"/><ellipse cx="14" cy="14" rx="7" ry="7" stroke="currentColor" stroke-width=".5"/><circle cx="14" cy="14" r="2.5" fill="currentColor" opacity=".4"/></svg>
+          <span class="text-gold/40 text-xs">✦</span>
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" class="text-gold/50"><ellipse cx="14" cy="14" rx="12" ry="12" stroke="currentColor" stroke-width=".8"/><ellipse cx="14" cy="14" rx="7" ry="7" stroke="currentColor" stroke-width=".5"/><circle cx="14" cy="14" r="2.5" fill="currentColor" opacity=".4"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14"><ellipse cx="7" cy="7" rx="6" ry="6" stroke="#B8862D" stroke-width=".5" opacity=".25"/><circle cx="7" cy="7" r="1.5" fill="#B8862D" opacity=".25"/></svg>
+        </div>
+        <div class="h-px flex-1 max-w-[80px] bg-gradient-to-l from-transparent to-gold/30"></div>
+      </div>
+
+      <!-- Bride -->
+      <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+        <div class="reveal rd1 flex justify-center">
+          <div class="relative">
+            <div class="absolute -inset-4 rounded-2xl batik-kawung-dense opacity-70 pointer-events-none"></div>
+            <div class="absolute -inset-2 rounded-2xl border-2 border-gold/20 pointer-events-none"></div>
+            <svg class="absolute -top-3 -left-3 w-6 h-6 text-gold/40" viewBox="0 0 24 24" fill="none"><path d="M0 0 L24 0 L24 4 L4 4 L4 24 L0 24 Z" fill="currentColor"/></svg>
+            <svg class="absolute -top-3 -right-3 w-6 h-6 text-gold/40" viewBox="0 0 24 24" fill="none"><path d="M24 0 L0 0 L0 4 L20 4 L20 24 L24 24 Z" fill="currentColor"/></svg>
+            <svg class="absolute -bottom-3 -left-3 w-6 h-6 text-gold/40" viewBox="0 0 24 24" fill="none"><path d="M0 24 L24 24 L24 20 L4 20 L4 0 L0 0 Z" fill="currentColor"/></svg>
+            <svg class="absolute -bottom-3 -right-3 w-6 h-6 text-gold/40" viewBox="0 0 24 24" fill="none"><path d="M24 24 L0 24 L0 20 L20 20 L20 0 L24 0 Z" fill="currentColor"/></svg>
+            <div class="relative w-56 md:w-72 aspect-[3/4] rounded-2xl overflow-hidden soft-shadow-lg">
+              <img src="https://picsum.photos/seed/indonesian-woman-kebaya-elegant/500/660.jpg" alt="Dewi" class="w-full h-full object-cover">
+              <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-brown/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal rd2 text-center md:text-left">
+          <div class="inline-block bg-gold/10 rounded-full px-3 py-1 mb-3">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-gold font-medium">Mempelai Wanita</p>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl font-light text-brown">Dewi Kusuma Wardani</h3>
+          <div class="flex items-center gap-2 my-4">
+            <div class="h-px flex-1 max-w-[60px] bg-gold/30 mx-auto md:mx-0"></div>
+            <svg width="16" height="16" viewBox="0 0 16 16"><ellipse cx="8" cy="8" rx="7" ry="7" stroke="#B8862D" stroke-width=".5" opacity=".3"/><circle cx="8" cy="8" r="1.5" fill="#B8862D" opacity=".3"/></svg>
+            <div class="h-px flex-1 max-w-[60px] bg-gold/30 mx-auto md:mx-0"></div>
+          </div>
+          <p class="text-sm text-brown-mid leading-relaxed max-w-sm mx-auto md:mx-0">
+            Putri kedua dari<br>
+            <span class="text-brown font-medium">Bapak Kusuma Wardani</span> &<br>
+            <span class="text-brown font-medium">Ibu Ratih Sari Ningrum</span>
+          </p>
+          <a href="#" class="inline-flex items-center gap-1.5 mt-5 text-xs text-brown-light hover:text-gold transition-colors">
+            <span class="iconify" data-icon="lucide:instagram" data-width="13"></span>
+            <span>@dewi.wardani</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUOTE ===== -->
+  <section class="py-16 md:py-20 relative">
+    <div class="ornate-border-top w-full"></div>
+    <div class="max-w-2xl mx-auto px-6 text-center pt-8 reveal">
+      <div class="bg-bg-deep rounded-3xl p-8 md:p-12 soft-shadow-lg corner-ornament relative overflow-hidden">
+        <!-- Batik pattern overlay -->
+        <div class="absolute inset-0 batik-sidomukti opacity-30 pointer-events-none rounded-3xl"></div>
+        <!-- Corner flowers -->
+        <svg class="absolute top-5 left-5 w-10 h-10 opacity-20 pointer-events-none" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="10" r="6" fill="none" stroke="#B8862D" stroke-width=".6"/><circle cx="10" cy="25" r="6" fill="none" stroke="#B8862D" stroke-width=".6"/><circle cx="30" cy="25" r="6" fill="none" stroke="#B8862D" stroke-width=".6"/><circle cx="20" cy="20" r="3" fill="#D4A843" opacity=".3"/></svg>
+        <svg class="absolute bottom-5 right-5 w-10 h-10 opacity-20 pointer-events-none" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="30" r="6" fill="none" stroke="#B8862D" stroke-width=".6"/><circle cx="10" cy="15" r="6" fill="none" stroke="#B8862D" stroke-width=".6"/><circle cx="30" cy="15" r="6" fill="none" stroke="#B8862D" stroke-width=".6"/><circle cx="20" cy="20" r="3" fill="#D4A843" opacity=".3"/></svg>
+
+        <div class="relative z-10">
+          <span class="iconify text-gold/30 mb-4 inline-block" data-icon="lucide:quote" data-width="28"></span>
+          <p class="font-display text-lg md:text-xl italic text-brown leading-relaxed">
+            "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+          </p>
+          <div class="flex items-center justify-center gap-3 mt-6">
+            <div class="h-px w-8 bg-gold/20"></div>
+            <p class="text-xs text-brown-light tracking-wider">QS. Ar-Rum: 21</p>
+            <div class="h-px w-8 bg-gold/20"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ornate-border-bottom w-full mt-8"></div>
+  </section>
+
+  <!-- ===== CERITA ===== -->
+  <section id="cerita" class="py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-48 h-full batik-parang-dense opacity-30 pointer-events-none"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <div class="inline-block relative">
+          <svg class="absolute -top-8 left-1/2 -translate-x-1/2 w-[100px] h-[100px] opacity-20 animate-spin-slow pointer-events-none" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" stroke="#B8862D" stroke-width=".5" stroke-dasharray="4 6"/><circle cx="50" cy="2" r="3" fill="#B8862D" opacity=".3"/><circle cx="98" cy="50" r="3" fill="#B8862D" opacity=".3"/><circle cx="50" cy="98" r="3" fill="#B8862D" opacity=".3"/><circle cx="2" cy="50" r="3" fill="#B8862D" opacity=".3"/></svg>
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" class="mx-auto text-gold/50 mb-3"><ellipse cx="28" cy="28" rx="26" ry="26" stroke="currentColor" stroke-width="1"/><ellipse cx="28" cy="28" rx="20" ry="20" stroke="currentColor" stroke-width=".6"/><ellipse cx="28" cy="28" rx="14" ry="14" stroke="currentColor" stroke-width=".4"/><circle cx="28" cy="28" r="5" fill="currentColor" opacity=".3"/><circle cx="28" cy="28" r="2" fill="currentColor" opacity=".5"/></svg>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl font-light text-brown">Cerita Kami</h2>
+        <div class="flex items-center justify-center gap-2 mt-3">
+          <div class="h-px w-16 bg-gradient-to-r from-transparent to-gold/30"></div>
+          <svg width="8" height="8"><circle cx="4" cy="4" r="2" fill="#B8862D" opacity=".3"/></svg>
+          <div class="h-px w-16 bg-gradient-to-l from-transparent to-gold/30"></div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="reveal rd1 flex flex-col sm:flex-row gap-5 items-start bg-bg-deep rounded-2xl p-6 md:p-8 soft-shadow border border-gold/10 card-hover corner-ornament relative overflow-hidden">
+          <div class="absolute inset-0 batik-sidomukti opacity-15 pointer-events-none rounded-2xl"></div>
+          <div class="relative w-full sm:w-36 flex-shrink-0 aspect-[4/3] rounded-xl overflow-hidden border border-gold/15">
+            <img src="https://picsum.photos/seed/java-market-traditional-warm/400/300.jpg" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="relative flex-1">
+            <div class="inline-block bg-gold/10 rounded-full px-2.5 py-0.5 mb-2">
+              <span class="text-[10px] tracking-[0.25em] uppercase text-gold">Januari 2021</span>
+            </div>
+            <h3 class="font-display text-lg md:text-xl text-brown mb-2">Pertama Bertemu</h3>
+            <p class="text-sm text-brown-mid leading-relaxed">Di sebuah acara budaya kampus, Raka dan Dewi bertemu. Sebuah senyuman menjadi benih cinta yang tumbuh perlahan.</p>
+          </div>
+        </div>
+
+        <div class="reveal rd2 flex flex-col sm:flex-row-reverse gap-5 items-start bg-bg-deep rounded-2xl p-6 md:p-8 soft-shadow border border-gold/10 card-hover corner-ornament relative overflow-hidden">
+          <div class="absolute inset-0 batik-sidomukti opacity-15 pointer-events-none rounded-2xl"></div>
+          <div class="relative w-full sm:w-36 flex-shrink-0 aspect-[4/3] rounded-xl overflow-hidden border border-gold/15">
+            <img src="https://picsum.photos/seed/borobudur-temple-sunrise-couple/400/300.jpg" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="relative flex-1 sm:text-right">
+            <div class="inline-block bg-gold/10 rounded-full px-2.5 py-0.5 mb-2">
+              <span class="text-[10px] tracking-[0.25em] uppercase text-gold">Maret 2023</span>
+            </div>
+            <h3 class="font-display text-lg md:text-xl text-brown mb-2">Mulai Dekat</h3>
+            <p class="text-sm text-brown-mid leading-relaxed">Perjalanan ke Candi Borobudur menjadi momen hati kami saling terpaut. Sejak itu, kami tak ingin berpisah.</p>
+          </div>
+        </div>
+
+        <div class="reveal rd3 flex flex-col sm:flex-row gap-5 items-start bg-bg-deep rounded-2xl p-6 md:p-8 soft-shadow border border-gold/10 card-hover corner-ornament relative overflow-hidden">
+          <div class="absolute inset-0 batik-sidomukti opacity-15 pointer-events-none rounded-2xl"></div>
+          <div class="relative w-full sm:w-36 flex-shrink-0 aspect-[4/3] rounded-xl overflow-hidden border border-gold/15">
+            <img src="https://picsum.photos/seed/romantic-garden-proposal-night/400/300.jpg" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="relative flex-1">
+            <div class="inline-block bg-gold/10 rounded-full px-2.5 py-0.5 mb-2">
+              <span class="text-[10px] tracking-[0.25em] uppercase text-gold">Desember 2025</span>
+            </div>
+            <h3 class="font-display text-lg md:text-xl text-brown mb-2">Lamaran</h3>
+            <p class="text-sm text-brown-mid leading-relaxed">Dikelilingi bunga melati, Raka berlutut dan mengajukan pertanyaan yang mengubah hidup kami. Dewi menjawab dengan air mata bahagia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACARA ===== -->
+  <section id="acara" class="py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute inset-0 batik-truntum-dense opacity-40 pointer-events-none"></div>
+    <div class="ornate-border-top w-full"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 pt-8">
+      <div class="text-center mb-14 reveal">
+        <div class="inline-block relative">
+          <svg class="absolute -top-8 left-1/2 -translate-x-1/2 w-[100px] h-[100px] opacity-20 animate-spin-slow pointer-events-none" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" stroke="#B8862D" stroke-width=".5" stroke-dasharray="4 6"/><circle cx="50" cy="2" r="3" fill="#B8862D" opacity=".3"/><circle cx="98" cy="50" r="3" fill="#B8862D" opacity=".3"/><circle cx="50" cy="98" r="3" fill="#B8862D" opacity=".3"/><circle cx="2" cy="50" r="3" fill="#B8862D" opacity=".3"/></svg>
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" class="mx-auto text-gold/50 mb-3"><ellipse cx="28" cy="28" rx="26" ry="26" stroke="currentColor" stroke-width="1"/><ellipse cx="28" cy="28" rx="20" ry="20" stroke="currentColor" stroke-width=".6"/><ellipse cx="28" cy="28" rx="14" ry="14" stroke="currentColor" stroke-width=".4"/><circle cx="28" cy="28" r="5" fill="currentColor" opacity=".3"/><circle cx="28" cy="28" r="2" fill="currentColor" opacity=".5"/></svg>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl font-light text-brown">Waktu & Tempat</h2>
+        <div class="flex items-center justify-center gap-2 mt-3">
+          <div class="h-px w-16 bg-gradient-to-r from-transparent to-gold/30"></div>
+          <svg width="8" height="8"><circle cx="4" cy="4" r="2" fill="#B8862D" opacity=".3"/></svg>
+          <div class="h-px w-16 bg-gradient-to-l from-transparent to-gold/30"></div>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5 md:gap-8">
+        <div class="reveal rd1 bg-bg rounded-2xl p-7 md:p-8 soft-shadow-lg card-hover border border-gold/15 corner-ornament relative overflow-hidden">
+          <div class="absolute inset-0 batik-sidomukti opacity-10 pointer-events-none rounded-2xl"></div>
+          <div class="absolute -bottom-6 -right-6 w-28 h-28 opacity-[0.04] pointer-events-none">
+            <svg viewBox="0 0 100 100" fill="none"><ellipse cx="50" cy="50" rx="48" ry="48" stroke="#B8862D" stroke-width="1"/><ellipse cx="50" cy="50" rx="30" ry="30" stroke="#B8862D" stroke-width=".6"/><circle cx="50" cy="50" r="10" fill="#B8862D" opacity=".3"/></svg>
+          </div>
+          <div class="relative">
+            <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center mb-5 gold-glow">
+              <span class="iconify text-gold" data-icon="lucide:heart-handshake" data-width="20"></span>
+            </div>
+            <div class="inline-block bg-gold/10 rounded-full px-2.5 py-0.5 mb-2">
+              <p class="text-[10px] tracking-[0.25em] uppercase text-gold">Akad Nikah</p>
+            </div>
+            <h3 class="font-display text-xl md:text-2xl font-light text-brown mb-5">Ikrar Pernikahan</h3>
+            <div class="space-y-3.5">
+              <div class="flex items-center gap-3"><span class="iconify text-gold/50 flex-shrink-0" data-icon="lucide:calendar-days" data-width="14"></span><span class="text-sm text-brown-mid">Minggu, 21 Juni 2026</span></div>
+              <div class="flex items-center gap-3"><span class="iconify text-gold/50 flex-shrink-0" data-icon="lucide:clock-3" data-width="14"></span><span class="text-sm text-brown-mid">08:00 — 10:00 WIB</span></div>
+              <div class="flex items-start gap-3"><span class="iconify text-gold/50 flex-shrink-0 mt-0.5" data-icon="lucide:map-pin" data-width="14"></span><div><span class="text-sm text-brown-mid block">Balai Kartini, Jakarta</span><span class="text-xs text-brown-light">Jl. Gatot Subroto Kav. 37</span></div></div>
+            </div>
+            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 mt-6 text-xs text-gold hover:text-brown transition-colors border-b border-gold/20 hover:border-gold/40 pb-0.5">
+              <span>Buka Maps</span><span class="iconify" data-icon="lucide:arrow-up-right" data-width="12"></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal rd2 bg-bg rounded-2xl p-7 md:p-8 soft-shadow-lg card-hover border border-gold/15 corner-ornament relative overflow-hidden">
+          <div class="absolute inset-0 batik-sidomukti opacity-10 pointer-events-none rounded-2xl"></div>
+          <div class="absolute -bottom-6 -right-6 w-28 h-28 opacity-[0.04] pointer-events-none">
+            <svg viewBox="0 0 100 100" fill="none"><ellipse cx="50" cy="50" rx="48" ry="48" stroke="#B8862D" stroke-width="1"/><ellipse cx="50" cy="50" rx="30" ry="30" stroke="#B8862D" stroke-width=".6"/><circle cx="50" cy="50" r="10" fill="#B8862D" opacity=".3"/></svg>
+          </div>
+          <div class="relative">
+            <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center mb-5 gold-glow">
+              <span class="iconify text-gold" data-icon="lucide:party-popper" data-width="20"></span>
+            </div>
+            <div class="inline-block bg-gold/10 rounded-full px-2.5 py-0.5 mb-2">
+              <p class="text-[10px] tracking-[0.25em] uppercase text-gold">Resepsi</p>
+            </div>
+            <h3 class="font-display text-xl md:text-2xl font-light text-brown mb-5">Pesta Adat & Modern</h3>
+            <div class="space-y-3.5">
+              <div class="flex items-center gap-3"><span class="iconify text-gold/50 flex-shrink-0" data-icon="lucide:calendar-days" data-width="14"></span><span class="text-sm text-brown-mid">Minggu, 21 Juni 2026</span></div>
+              <div class="flex items-center gap-3"><span class="iconify text-gold/50 flex-shrink-0" data-icon="lucide:clock-3" data-width="14"></span><span class="text-sm text-brown-mid">11:00 — 14:00 WIB</span></div>
+              <div class="flex items-start gap-3"><span class="iconify text-gold/50 flex-shrink-0 mt-0.5" data-icon="lucide:map-pin" data-width="14"></span><div><span class="text-sm text-brown-mid block">Balai Kartini, Jakarta</span><span class="text-xs text-brown-light">Jl. Gatot Subroto Kav. 37</span></div></div>
+            </div>
+            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 mt-6 text-xs text-gold hover:text-brown transition-colors border-b border-gold/20 hover:border-gold/40 pb-0.5">
+              <span>Buka Maps</span><span class="iconify" data-icon="lucide:arrow-up-right" data-width="12"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 reveal">
+        <div class="bg-bg rounded-2xl p-5 text-center border border-gold/10 soft-shadow corner-ornament relative overflow-hidden">
+          <div class="absolute inset-0 batik-kawung-dense opacity-20 pointer-events-none rounded-2xl"></div>
+          <div class="relative flex items-center justify-center gap-2 mb-1">
+            <span class="iconify text-gold/50" data-icon="lucide:shirt" data-width="14"></span>
+            <p class="text-sm text-brown-mid font-medium">Dresscode: Batik & Kebaya</p>
+            <span class="iconify text-gold/50" data-icon="lucide:shirt" data-width="14"></span>
+          </div>
+          <p class="text-xs text-brown-light relative">Dianjurkan mengenakan busana batik atau kebaya nasional</p>
+        </div>
+      </div>
+    </div>
+    <div class="ornate-border-bottom w-full mt-8"></div>
+  </section>
+
+  <!-- ===== GALERI ===== -->
+  <section id="galeri" class="py-20 md:py-28 relative">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <div class="inline-block relative">
+          <svg class="absolute -top-8 left-1/2 -translate-x-1/2 w-[100px] h-[100px] opacity-20 animate-spin-slow pointer-events-none" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" stroke="#B8862D" stroke-width=".5" stroke-dasharray="4 6"/><circle cx="50" cy="2" r="3" fill="#B8862D" opacity=".3"/><circle cx="98" cy="50" r="3" fill="#B8862D" opacity=".3"/><circle cx="50" cy="98" r="3" fill="#B8862D" opacity=".3"/><circle cx="2" cy="50" r="3" fill="#B8862D" opacity=".3"/></svg>
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" class="mx-auto text-gold/50 mb-3"><ellipse cx="28" cy="28" rx="26" ry="26" stroke="currentColor" stroke-width="1"/><ellipse cx="28" cy="28" rx="20" ry="20" stroke="currentColor" stroke-width=".6"/><ellipse cx="28" cy="28" rx="14" ry="14" stroke="currentColor" stroke-width=".4"/><circle cx="28" cy="28" r="5" fill="currentColor" opacity=".3"/><circle cx="28" cy="28" r="2" fill="currentColor" opacity=".5"/></svg>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl font-light text-brown">Galeri</h2>
+        <div class="flex items-center justify-center gap-2 mt-3">
+          <div class="h-px w-16 bg-gradient-to-r from-transparent to-gold/30"></div>
+          <svg width="8" height="8"><circle cx="4" cy="4" r="2" fill="#B8862D" opacity=".3"/></svg>
+          <div class="h-px w-16 bg-gradient-to-l from-transparent to-gold/30"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div class="reveal rd1 col-span-2 row-span-2 gallery-item relative">
+          <div class="aspect-[4/5] md:aspect-auto md:h-full"><img src="https://picsum.photos/seed/prewed-javanese-ornate-garden/800/1000.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+          <div class="absolute bottom-3 left-3 bg-bg/80 backdrop-blur-sm rounded-lg px-3 py-1.5 border border-gold/15">
+            <p class="text-[10px] text-gold tracking-wider uppercase">Pre-wedding</p>
+          </div>
+        </div>
+        <div class="reveal rd2 gallery-item relative"><div class="aspect-square"><img src="https://picsum.photos/seed/batik-fabric-detail-gold/400/400.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div></div>
+        <div class="reveal rd3 gallery-item relative"><div class="aspect-square"><img src="https://picsum.photos/seed/javanese-couple-smile-warm/400/400.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div></div>
+        <div class="reveal rd2 gallery-item relative"><div class="aspect-square"><img src="https://picsum.photos/seed/melati-flower-offering-white/400/400.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div></div>
+        <div class="reveal rd3 gallery-item relative"><div class="aspect-square"><img src="https://picsum.photos/seed/rice-field-golden-hour-couple/400/400.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RSVP ===== -->
+  <section id="rsvp" class="py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute inset-0 batik-kawung-dense opacity-50 pointer-events-none"></div>
+    <div class="ornate-border-top w-full"></div>
+
+    <div class="relative max-w-lg mx-auto px-6 pt-8">
+      <div class="text-center mb-12 reveal">
+        <div class="inline-block relative">
+          <svg class="absolute -top-8 left-1/2 -translate-x-1/2 w-[100px] h-[100px] opacity-20 animate-spin-slow pointer-events-none" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" stroke="#B8862D" stroke-width=".5" stroke-dasharray="4 6"/><circle cx="50" cy="2" r="3" fill="#B8862D" opacity=".3"/><circle cx="98" cy="50" r="3" fill="#B8862D" opacity=".3"/><circle cx="50" cy="98" r="3" fill="#B8862D" opacity=".3"/><circle cx="2" cy="50" r="3" fill="#B8862D" opacity=".3"/></svg>
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" class="mx-auto text-gold/50 mb-3"><ellipse cx="28" cy="28" rx="26" ry="26" stroke="currentColor" stroke-width="1"/><ellipse cx="28" cy="28" rx="20" ry="20" stroke="currentColor" stroke-width=".6"/><ellipse cx="28" cy="28" rx="14" ry="14" stroke="currentColor" stroke-width=".4"/><circle cx="28" cy="28" r="5" fill="currentColor" opacity=".3"/><circle cx="28" cy="28" r="2" fill="currentColor" opacity=".5"/></svg>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl font-light text-brown">Konfirmasi Kehadiran</h2>
+        <p class="text-sm text-brown-mid mt-4 max-w-sm mx-auto">Mohon konfirmasi sebelum 15 Juni 2026</p>
+      </div>
+
+      <form id="rsvpForm" action="https://api.web3forms.com/submit" method="POST" class="reveal rd1 space-y-4">
+        <input type="hidden" name="access_key" value="GANTI_DENGAN_ACCESS_KEY_MU">
+        <input type="hidden" name="subject" value="RSVP - Pernikahan Raka & Dewi">
+        <input type="hidden" name="from_name" value="Website Pernikahan">
+        <input type="checkbox" name="botcheck" class="hidden">
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div><label class="block text-[10px] tracking-[0.2em] uppercase text-brown-light mb-1.5">Nama</label><input type="text" name="name" required placeholder="Nama Anda" class="w-full bg-bg-deep border border-gold/15 rounded-xl px-4 py-3 text-sm text-brown placeholder-brown-faint focus:outline-none focus:border-gold/40 transition-colors"></div>
+          <div><label class="block text-[10px] tracking-[0.2em] uppercase text-brown-light mb-1.5">Email</label><input type="email" name="email" required placeholder="email@contoh.com" class="w-full bg-bg-deep border border-gold/15 rounded-xl px-4 py-3 text-sm text-brown placeholder-brown-faint focus:outline-none focus:border-gold/40 transition-colors"></div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div><label class="block text-[10px] tracking-[0.2em] uppercase text-brown-light mb-1.5">Kehadiran</label><select name="attendance" required class="w-full bg-bg-deep border border-gold/15 rounded-xl px-4 py-3 text-sm text-brown focus:outline-none focus:border-gold/40 transition-colors appearance-none cursor-pointer"><option value="" disabled selected>Pilih</option><option value="Hadir">Hadir</option><option value="Tidak Hadir">Tidak Hadir</option><option value="Ragu">Masih Ragu</option></select></div>
+          <div><label class="block text-[10px] tracking-[0.2em] uppercase text-brown-light mb-1.5">Jumlah Tamu</label><select name="guests" class="w-full bg-bg-deep border border-gold/15 rounded-xl px-4 py-3 text-sm text-brown focus:outline-none focus:border-gold/40 transition-colors appearance-none cursor-pointer"><option value="1">1 Orang</option><option value="2" selected>2 Orang</option><option value="3">3 Orang</option></select></div>
+        </div>
+        <div><label class="block text-[10px] tracking-[0.2em] uppercase text-brown-light mb-1.5">Ucapan & Doa</label><textarea name="message" rows="4" placeholder="Tulis ucapan..." class="w-full bg-bg-deep border border-gold/15 rounded-xl px-4 py-3 text-sm text-brown placeholder-brown-faint focus:outline-none focus:border-gold/40 transition-colors resize-none"></textarea></div>
+        <button type="submit" id="submitBtn" class="w-full btn-batik text-sm tracking-wider py-3.5 rounded-xl flex items-center justify-center gap-2 mt-2"><span>Kirim Konfirmasi</span><span class="iconify" data-icon="lucide:send" data-width="14"></span></button>
+      </form>
+
+      <div id="successMsg" class="hidden text-center py-10">
+        <div class="w-20 h-20 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center mx-auto mb-5 gold-glow">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="text-gold"><ellipse cx="16" cy="16" rx="14" ry="14" stroke="currentColor" stroke-width=".8"/><ellipse cx="16" cy="16" rx="8" ry="8" stroke="currentColor" stroke-width=".5"/><circle cx="16" cy="16" r="3" fill="currentColor" opacity=".5"/></svg>
+        </div>
+        <h3 class="font-display text-2xl text-brown">Terima Kasih!</h3>
+        <p class="text-sm text-brown-mid mt-3">Konfirmasi Anda telah kami terima.</p>
+      </div>
+    </div>
+    <div class="ornate-border-bottom w-full mt-8"></div>
+  </section>
+
+  <!-- ===== UCAPAN ===== -->
+  <section class="py-20 md:py-28 relative">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <div class="inline-block relative">
+          <svg class="absolute -top-8 left-1/2 -translate-x-1/2 w-[100px] h-[100px] opacity-20 animate-spin-slow pointer-events-none" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" stroke="#B8862D" stroke-width=".5" stroke-dasharray="4 6"/><circle cx="50" cy="2" r="3" fill="#B8862D" opacity=".3"/><circle cx="98" cy="50" r="3" fill="#B8862D" opacity=".3"/><circle cx="50" cy="98" r="3" fill="#B8862D" opacity=".3"/><circle cx="2" cy="50" r="3" fill="#B8862D" opacity=".3"/></svg>
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" class="mx-auto text-gold/50 mb-3"><ellipse cx="28" cy="28" rx="26" ry="26" stroke="currentColor" stroke-width="1"/><ellipse cx="28" cy="28" rx="20" ry="20" stroke="currentColor" stroke-width=".6"/><ellipse cx="28" cy="28" rx="14" ry="14" stroke="currentColor" stroke-width=".4"/><circle cx="28" cy="28" r="5" fill="currentColor" opacity=".3"/><circle cx="28" cy="28" r="2" fill="currentColor" opacity=".5"/></svg>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl font-light text-brown">Ucapan Tamu</h2>
+      </div>
+
+      <div id="wishesList" class="space-y-4 max-h-[420px] overflow-y-auto pr-1 reveal rd1" style="scrollbar-width:thin;scrollbar-color:rgba(184,134,45,.2) transparent">
+        <div class="bg-bg-deep rounded-xl p-5 soft-shadow border border-gold/10 corner-ornament relative overflow-hidden">
+          <div class="absolute inset-0 batik-sidomukti opacity-8 pointer-events-none rounded-xl"></div>
+          <p class="text-sm text-brown-mid leading-relaxed italic relative">"Selamat menempuh hidup baru! Semoga sakinah mawaddah warahmah. Aamiin 🤲"</p>
+          <div class="flex items-center gap-2.5 mt-3.5 relative"><div class="w-7 h-7 rounded-full bg-gold/10 border border-gold/15 flex items-center justify-center text-gold text-[10px] font-medium">S</div><div><p class="text-xs text-brown">Siti Aminah</p><p class="text-[10px] text-brown-faint">1 hari lalu</p></div></div>
+        </div>
+        <div class="bg-bg-deep rounded-xl p-5 soft-shadow border border-gold/10 corner-ornament relative overflow-hidden">
+          <div class="absolute inset-0 batik-sidomukti opacity-8 pointer-events-none rounded-xl"></div>
+          <p class="text-sm text-brown-mid leading-relaxed italic relative">"Happy wedding bro Raka! Langgeng sampai kakek nenek ya! 🎉"</p>
+          <div class="flex items-center gap-2.5 mt-3.5 relative"><div class="w-7 h-7 rounded-full bg-gold/10 border border-gold/15 flex items-center justify-center text-gold text-[10px] font-medium">A</div><div><p class="text-xs text-brown">Andi Pratama</p><p class="text-[10px] text-brown-faint">2 hari lalu</p></div></div>
+        </div>
+        <div class="bg-bg-deep rounded-xl p-5 soft-shadow border border-gold/10 corner-ornament relative overflow-hidden">
+          <div class="absolute inset-0 batik-sidomukti opacity-8 pointer-events-none rounded-xl"></div>
+          <p class="text-sm text-brown-mid leading-relaxed italic relative">"Dewi sayang, selamat! Aku pakai batik yang cocok ya! 💛"</p>
+          <div class="flex items-center gap-2.5 mt-3.5 relative"><div class="w-7 h-7 rounded-full bg-gold/10 border border-gold/15 flex items-center justify-center text-gold text-[10px] font-medium">R</div><div><p class="text-xs text-brown">Rina Wulandari</p><p class="text-[10px] text-brown-faint">3 hari lalu</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AMPLOP DIGITAL ===== -->
+  <section class="py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute inset-0 batik-parang-dense opacity-25 pointer-events-none"></div>
+    <div class="ornate-border-top w-full"></div>
+    <div class="relative max-w-md mx-auto px-6 pt-8">
+      <div class="text-center mb-10 reveal">
+        <div class="inline-block relative">
+          <svg class="absolute -top-8 left-1/2 -translate-x-1/2 w-[100px] h-[100px] opacity-20 animate-spin-slow pointer-events-none" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" stroke="#B8862D" stroke-width=".5" stroke-dasharray="4 6"/><circle cx="50" cy="2" r="3" fill="#B8862D" opacity=".3"/><circle cx="98" cy="50" r="3" fill="#B8862D" opacity=".3"/><circle cx="50" cy="98" r="3" fill="#B8862D" opacity=".3"/><circle cx="2" cy="50" r="3" fill="#B8862D" opacity=".3"/></svg>
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" class="mx-auto text-gold/50 mb-3"><ellipse cx="28" cy="28" rx="26" ry="26" stroke="currentColor" stroke-width="1"/><ellipse cx="28" cy="28" rx="20" ry="20" stroke="currentColor" stroke-width=".6"/><ellipse cx="28" cy="28" rx="14" ry="14" stroke="currentColor" stroke-width=".4"/><circle cx="28" cy="28" r="5" fill="currentColor" opacity=".3"/><circle cx="28" cy="28" r="2" fill="currentColor" opacity=".5"/></svg>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl font-light text-brown">Amplop Digital</h2>
+        <p class="text-sm text-brown-mid mt-4">Doa restu adalah karunia terbesar. Jika ingin memberikan tanda kasih:</p>
+      </div>
+      <div class="space-y-3 reveal rd1">
+        <div class="bg-bg-deep rounded-xl p-5 soft-shadow border border-gold/10 card-hover corner-ornament relative overflow-hidden">
+          <div class="absolute inset-0 batik-sidomukti opacity-8 pointer-events-none rounded-xl"></div>
+          <div class="flex items-center justify-between mb-2 relative"><span class="text-[10px] tracking-[0.2em] uppercase text-gold">Bank BCA</span><button onclick="copyRek('4520183764',this)" class="text-brown-faint hover:text-gold transition-colors p-1"><span class="iconify" data-icon="lucide:copy" data-width="13"></span></button></div>
+          <p class="font-mono text-sm text-brown tracking-wider relative">4520 1837 64</p>
+          <p class="text-xs text-brown-light mt-0.5 relative">a.n. Raka Putra Mahardika</p>
+        </div>
+        <div class="bg-bg-deep rounded-xl p-5 soft-shadow border border-gold/10 card-hover corner-ornament relative overflow-hidden">
+          <div class="absolute inset-0 batik-sidomukti opacity-8 pointer-events-none rounded-xl"></div>
+          <div class="flex items-center justify-between mb-2 relative"><span class="text-[10px] tracking-[0.2em] uppercase text-gold">Bank Mandiri</span><button onclick="copyRek('1280094573',this)" class="text-brown-faint hover:text-gold transition-colors p-1"><span class="iconify" data-icon="lucide:copy" data-width="13"></span></button></div>
+          <p class="font-mono text-sm text-brown tracking-wider relative">1280 0945 73</p>
+          <p class="text-xs text-brown-light mt-0.5 relative">a.n. Dewi Kusuma Wardani</p>
+        </div>
+      </div>
+    </div>
+    <div class="ornate-border-bottom w-full mt-8"></div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-brown py-16 md:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 batik-kawung-dense opacity-15 pointer-events-none" style="filter:brightness(2.5)"></div>
+    <div class="absolute inset-0 batik-parang-dense opacity-5 pointer-events-none" style="filter:brightness(3)"></div>
+
+    <div class="relative max-w-2xl mx-auto px-6 text-center">
+      <svg width="70" height="70" viewBox="0 0 70 70" fill="none" class="mx-auto mb-6 text-gold/25">
+        <ellipse cx="35" cy="35" rx="33" ry="33" stroke="currentColor" stroke-width=".6"/>
+        <ellipse cx="35" cy="35" rx="25" ry="25" stroke="currentColor" stroke-width=".4"/>
+        <ellipse cx="35" cy="35" rx="17" ry="17" stroke="currentColor" stroke-width=".3"/>
+        <circle cx="35" cy="35" r="6" fill="currentColor" opacity=".3"/>
+        <circle cx="35" cy="35" r="2.5" fill="currentColor" opacity=".4"/>
+      </svg>
+
+      <p class="font-display text-2xl md:text-3xl font-light text-bg mb-2">Raka & Dewi</p>
+      <p class="text-[10px] tracking-[0.35em] uppercase text-brown-light/40 mb-8">21 Juni 2026</p>
+      <p class="text-sm text-brown-light/50 leading-relaxed max-w-md mx-auto mb-6">Merupakan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.</p>
+      <p class="text-xs text-brown-light/30 mb-10">Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.</p>
+
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <svg width="12" height="12" viewBox="0 0 12 12"><ellipse cx="6" cy="6" rx="5" ry="5" stroke="#B8862D" stroke-width=".4" opacity=".3"/></svg>
+        <span class="text-gold/30 text-xs tracking-wider">Dengan penuh cinta</span>
+        <svg width="12" height="12" viewBox="0 0 12 12"><ellipse cx="6" cy="6" rx="5" ry="5" stroke="#B8862D" stroke-width=".4" opacity=".3"/></svg>
+      </div>
+      <p class="text-[9px] tracking-[0.2em] uppercase text-brown-light/15">Raka & Dewi Wedding — 2026</p>
+    </div>
+  </footer>
+
+  <!-- Music Toggle -->
+  <button id="musicBtn" class="fixed bottom-5 right-5 z-50 w-11 h-11 rounded-full bg-bg border border-gold/20 soft-shadow flex items-center justify-center text-brown-light hover:text-gold hover:border-gold/40 transition-all duration-300" title="Musik">
+    <span class="iconify" data-icon="lucide:music" data-width="15" id="musicIcon"></span>
+  </button>
+  <div id="toastBox" class="fixed bottom-20 right-5 z-50 space-y-2"></div>
+
+  <script>
+    const nav=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>nav.classList.toggle('nav-scrolled',window.scrollY>60));
+
+    const menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');
+    let mO=false;
+    menuBtn.addEventListener('click',()=>{mO=!mO;mobileMenu.classList.toggle('hidden');menuBtn.innerHTML=mO?'<span class="iconify" data-icon="lucide:x" data-width="22"></span>':'<span class="iconify" data-icon="lucide:menu" data-width="22"></span>';});
+    document.querySelectorAll('.mob-link').forEach(l=>l.addEventListener('click',()=>{mobileMenu.classList.add('hidden');mO=false;menuBtn.innerHTML='<span class="iconify" data-icon="lucide:menu" data-width="22"></span>';}));
+
+    const tgt=new Date('2026-06-21T08:00:00+07:00').getTime();
+    function tick(){const d=tgt-Date.now();if(d<0)return;document.getElementById('days').textContent=String(Math.floor(d/864e5)).padStart(2,'0');document.getElementById('hours').textContent=String(Math.floor((d%864e5)/36e5)).padStart(2,'0');document.getElementById('minutes').textContent=String(Math.floor((d%36e5)/6e4)).padStart(2,'0');document.getElementById('seconds').textContent=String(Math.floor((d%6e4)/1e3)).padStart(2,'0');}
+    tick();setInterval(tick,1000);
+
+    const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('active');}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    document.getElementById('rsvpForm').addEventListener('submit',async function(e){
+      e.preventDefault();const btn=document.getElementById('submitBtn'),orig=btn.innerHTML;
+      btn.disabled=true;btn.innerHTML='<span class="iconify animate-spin" data-icon="lucide:loader-2" data-width="16"></span><span>Mengirim...</span>';
+      try{const fd=new FormData(this),res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd}),json=await res.json();
+      if(json.success){this.classList.add('hidden');document.getElementById('successMsg').classList.remove('hidden');if(fd.get('message')?.trim())addWish(fd.get('name'),fd.get('message'));toast('Konfirmasi berhasil!');}else throw 0;}
+      catch(err){toast('Gagal, coba lagi.');btn.disabled=false;btn.innerHTML=orig;}
+    });
+
+    function addWish(n,m){const l=document.getElementById('wishesList'),el=document.createElement('div');el.className='bg-bg-deep rounded-xl p-5 soft-shadow border border-gold/20 corner-ornament relative overflow-hidden';el.style.animation='fadeUp .5s ease-out';el.innerHTML=`<div class="absolute inset-0 batik-sidomukti opacity-8 pointer-events-none rounded-xl"></div><p class="text-sm text-brown-mid leading-relaxed italic relative">"${m}"</p><div class="flex items-center gap-2.5 mt-3.5 relative"><div class="w-7 h-7 rounded-full bg-gold/10 border border-gold/15 flex items-center justify-center text-gold text-[10px] font-medium">${n[0].toUpperCase()}</div><div><p class="text-xs text-brown">${n}</p><p class="text-[10px] text-brown-faint">Baru saja</p></div></div>`;l.insertBefore(el,l.firstChild);}
+
+    function copyRek(t,b){navigator.clipboard.writeText(t).then(()=>{const o=b.innerHTML;b.innerHTML='<span class="iconify text-gold" data-icon="lucide:check" data-width="13"></span>';toast('Nomor rekening disalin!');setTimeout(()=>b.innerHTML=o,2000);});}
+
+    function toast(m){const box=document.getElementById('toastBox'),el=document.createElement('div');el.className='toast flex items-center gap-2.5 px-5 py-3 rounded-xl bg-brown/90 text-bg text-sm shadow-lg backdrop-blur-lg';el.innerHTML=`<span class="iconify text-gold-soft" data-icon="lucide:check-circle" data-width="15"></span>${m}`;box.appendChild(el);setTimeout(()=>el.remove(),3200);}
+
+    let playing=false;
+    document.getElementById('musicBtn').addEventListener('click',function(){playing=!playing;this.classList.toggle('text-gold',playing);this.classList.toggle('border-gold/40',playing);document.getElementById('musicIcon').setAttribute('data-icon',playing?'lucide:music':'lucide:music-off');toast(playing?'Musik diputar (demo)':'Musik dimatikan');});
+  </script>
+</body>
+</html>
